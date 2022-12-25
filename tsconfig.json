@@ -1,0 +1,27 @@
+{
+	"compilerOptions": {
+		"pretty": true,
+		"sourceMap": true,
+		"importHelpers": true,
+		"strict": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"noImplicitThis": true,
+		"alwaysStrict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": false,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"allowSyntheticDefaultImports": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"resolveJsonModule": true,
+		"esModuleInterop": true,
+		"baseUrl": ".",
+    "paths": {
+      "common": ["./common"],
+      "types": ["./types"],
+    },
+    "typeRoots": ["./types", "./node_modules/@types"]
+	}
+}
