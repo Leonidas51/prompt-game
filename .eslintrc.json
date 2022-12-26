@@ -27,7 +27,8 @@
       "import/extensions": "off",
       "indent": [2, 2],
       "no-unused-vars": "warn",
-      "react/function-component-definition": "off"
+      "react/function-component-definition": "off",
+      "no-param-reassign": "off"
     },
     "settings": {
       "import/parsers": {
