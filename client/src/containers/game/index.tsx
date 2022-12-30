@@ -18,6 +18,7 @@ export const Game = () => {
     });
 
     setSocket(socketConnect);
+    socketConnect.emit('start');
   }, []);
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {

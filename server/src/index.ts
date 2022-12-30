@@ -4,8 +4,8 @@ import { createServer } from 'http';
 import { Server } from 'socket.io';
 import { createClient } from 'redis';
 import { registerSocketHandlers } from './register-socket-handlers';
-import { getNewPrompt } from './get-new-prompt';
 import { Game } from './game/index';
+import { DBConnection } from './connection/DBCconnection';
 
 const dbClient = createClient();
 dbClient.connect().then(() => {
@@ -21,15 +21,14 @@ dbClient.connect().then(() => {
   const server = createServer(app);
   const io = new Server(server);
 
-  io.on('connect', (socket) => {
-    const game = new Game();
+  io.on('connect', async (socket) => {
+    const game = new Game(new DBConnection(dbClient));
+    await game.init();
 
-    registerSocketHandlers(socket, dbClient, game);
-    getNewPrompt(socket, dbClient, game);
+    registerSocketHandlers(socket, game);
   });
 
   server.listen(port, () => {
-    // eslint-disable-next-line no-console
     console.log(`Server listening on port ${port}`);
   });
 }).catch((e) => {
