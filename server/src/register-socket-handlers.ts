@@ -15,11 +15,16 @@ export const registerSocketHandlers = (
     const isSuccess = await game.onWord(word);
 
     if (isSuccess) {
-      socket.emit('prompt', game.getNewPrompt());
+      socket.emit('success');
+    } else {
+      socket.emit('fail');
     }
+
+    socket.emit('prompt', game.getCurrentPrompt());
   });
 
   socket.once('disconnect', () => {
+    // eslint-disable-next-line no-console
     console.log('disconnect');
   });
 };
