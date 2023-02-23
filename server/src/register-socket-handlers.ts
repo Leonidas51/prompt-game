@@ -20,7 +20,7 @@ export const registerSocketHandlers = (
       socket.emit('fail');
     }
 
-    socket.emit('prompt', game.getCurrentPrompt());
+    socket.emit('prompt', game.getNewPrompt());
   });
 
   socket.once('disconnect', () => {

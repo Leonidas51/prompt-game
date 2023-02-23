@@ -2,19 +2,19 @@ html {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.separator {
+.game-separator {
   height: 20px;
 }
 
-#players-list .active {
+.game-player_active {
   color: brown;
 }
 
-.word-status {
+.game-word-status {
   margin-left: 20px;
   color: red;
 }
 
-.word-status.found {
+.game-word-status_found {
   color: green;
 }
