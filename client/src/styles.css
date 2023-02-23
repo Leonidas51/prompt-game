@@ -1,3 +1,20 @@
 html {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.game-separator {
+  height: 20px;
+}
+
+.game-player_active {
+  color: brown;
+}
+
+.game-word-status {
+  margin-left: 20px;
+  color: red;
+}
+
+.game-word-status_found {
+  color: green;
+}
