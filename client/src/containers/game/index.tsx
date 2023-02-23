@@ -14,9 +14,9 @@ type GuessStatusRecordKey = keyof typeof GuessStatusTemplate;
 
 const players = [0, 1, 2];
 
-function getNextPlayer(items: number[], currentItem: number): number {
-  return ++currentItem % items.length;
-}
+const getNextPlayer = (items: number[], currentItem: number): number => (
+  ++currentItem % items.length
+);
 
 const socket = io('localhost:3000');
 
